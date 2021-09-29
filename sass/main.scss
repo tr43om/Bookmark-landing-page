@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap");
+
+$vars: (
+  soft-blue: hsl(231, 69%, 60%),
+  soft-red: hsl(0, 94%, 66%),
+  grayish-blue: hsl(229, 8%, 60%),
+  dark-blue: rgb(37, 43, 70),
+);
+
+// Fallback
+@mixin var($property, $variable) {
+  #{$property}: map-get($vars, $variable);
+  #{$property}: var(--#{$variable});
+}
+
+:root {
+  @each $property, $value in $vars {
+    --#{$property}: #{$value};
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; // 1 rem = 10px
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Rubik", sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  @include var(color, dark-blue);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+/* NAVIGATION */
+.navigation {
+  // .navigation__background
+
+  &__hamburger {
+    width: 3rem; //1rem
+    height: 3rem; //1rem
+    border-radius: 1px;
+    top: 2.5rem;
+    right: 2.5rem;
+    background-color: transparent;
+    position: absolute;
+    z-index: 2000;
+    border: none;
+    cursor: pointer;
+
+    &--closed {
+      display: none;
+      transition: 1s;
+    }
+  }
+
+  // .navigation__nav
+
+  &__nav {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1500;
+    background-color: transparentize(map-get($vars, soft-blue), 0.3);
+    transform: translateY(-100%);
+    transition: transform 0.2s;
+
+    &--opened {
+      transform: translateY(0);
+    }
+  }
+
+  // .navigation__list
+
+  &__list {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  // .navigation__item
+
+  &__item {
+  }
+
+  // .navigation__link
+
+  &__link {
+    font-size: 3rem;
+    text-transform: uppercase;
+  }
+}
+.container {
+}
+.navigation--hidden {
+}
+.btn {
+}
+.btn--login {
+}
+
+.logo {
+  // filter: invert(999%) saturate(0%) brightness(999%) contrast(999%);
+}
