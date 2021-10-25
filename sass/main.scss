@@ -170,7 +170,6 @@ $h3-font-sizes: (
 html {
   box-sizing: border-box;
   font-size: 62.5%; // 1 rem = 10px
-  overflow-x: hidden;
 }
 
 body {
@@ -224,6 +223,7 @@ button {
   @include max-width();
   margin-inline: auto;
   padding: 0 4rem;
+  overflow-x: hidden;
 }
 
 /* IMAGES BACKGROUND */
