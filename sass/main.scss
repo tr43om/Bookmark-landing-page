@@ -218,12 +218,15 @@ button {
   font-family: inherit;
   letter-spacing: 0.25px;
 }
+
+.u-overflow-x {
+  overflow-x: hidden;
+}
 /* CONTAINER */
 .container {
   @include max-width();
   margin-inline: auto;
   padding: 0 4rem;
-  overflow-x: hidden;
 }
 
 /* IMAGES BACKGROUND */

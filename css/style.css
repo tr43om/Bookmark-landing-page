@@ -82,11 +82,13 @@ button {
   font-family: inherit;
   letter-spacing: 0.25px; }
 
+.u-overflow-x {
+  overflow-x: hidden; }
+
 /* CONTAINER */
 .container {
   margin-inline: auto;
-  padding: 0 4rem;
-  overflow-x: hidden; }
+  padding: 0 4rem; }
   @media screen and (min-width: 1440px) {
     .container {
       max-width: 1104px; } }
